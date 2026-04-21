@@ -1,0 +1,29 @@
+import pandas as pd
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David'],
+    'Age': [25, 30, 35, 28],
+    'Salary': [50000, 60000, 75000, 55000]
+}
+df = pd.DataFrame(data)
+
+# Display the DataFrame
+print(df)
+
+# Filter rows where Age > 28
+filtered = df[df['Age'] > 28]
+print(filtered)
+
+# Add a new column
+df['Bonus'] = df['Salary'] * 0.1
+print(df)
+
+# Group by and aggregate
+avg_salary = df.groupby('Age')['Salary'].mean()
+print(avg_salary)
+
+# Sort by Salary
+sorted_df = df.sort_values('Salary', ascending=False)
+print(sorted_df)
+
+# Get summary statistics
+print(df.describe())
